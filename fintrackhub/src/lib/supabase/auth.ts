@@ -5,21 +5,25 @@ import { supabase } from './client'
 import { User } from '@supabase/supabase-js'
 
 export const authService = {
+
     signUp: async (email: string, password: string, fullName?: string) => {
-      const trimmedEmail = email.trim()
-  
+      const trimmedEmail = email.trim();
+
       const { data, error } = await supabase.auth.signUp({
         email: trimmedEmail,
-        password
-      })
-  
+        password,
+        options: {
+          data: { display_name: fullName }
+        }
+      });
+
       if (data.user && fullName) {
         await supabase
           .from('profiles')
-          .insert({ id: data.user.id, full_name: fullName })
+          .insert({ id: data.user.id, full_name: fullName });
       }
-  
-      return { user: data.user, error }
+
+      return { user: data.user, error };
     },
   
     signIn: async (email: string, password: string) => {

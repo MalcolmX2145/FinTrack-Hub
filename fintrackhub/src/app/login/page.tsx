@@ -11,7 +11,7 @@ export default function LoginPage() {
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="text-center">
           <h1 className="text-3xl font-bold text-gray-900">FinTrack Hub</h1>
-          <h2 className="mt-6 text-2xl font-semibold text-gray-900">Sign in to your account</h2>
+          <h2 className="mt-6 text-2xl font-semibold text-gray-900">Log in to your account</h2>
         </div>
       </div>
 
@@ -22,9 +22,11 @@ export default function LoginPage() {
           <div className="mt-6 text-center">
             <button
               onClick={() => (window.location.href = '/signin')}
-              className="text-sm text-primary-600 hover:text-primary-800"
+              className="text-sm font-semibold text-black"
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
             >
-              Dont have an account? Sign up
+              <span style={{ color: '#000' }}>Don&apos;t have an account? </span>
+              <span style={{ color: '#2563eb', textDecoration: 'underline' }}>Sign up</span>
             </button>
           </div>
         </div>

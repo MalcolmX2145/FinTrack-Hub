@@ -19,9 +19,11 @@ export default function SigninPage() {
           <div className="mt-6 text-center">
             <button
               onClick={() => (window.location.href = '/login')}
-              className="text-sm text-primary-600 hover:text-primary-800"
+              className="text-sm font-semibold text-black"
+              style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
             >
-              Already have an account? Log in
+              <span style={{ color: '#000' }}>Already have an account? </span>
+              <span style={{ color: '#2563eb', textDecoration: 'underline' }}>Log in</span>
             </button>
           </div>
         </div>
